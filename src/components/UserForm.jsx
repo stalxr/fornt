@@ -19,6 +19,14 @@ const UserForm = ({ initialData, onSubmit, onCancel }) => {
         phone: initialData.phone || '',
         website: initialData.website || '',
       });
+    } else {
+      setFormData({
+        name: '',
+        username: '',
+        email: '',
+        phone: '',
+        website: '',
+      });
     }
   }, [initialData]);
 
@@ -93,7 +101,7 @@ const UserForm = ({ initialData, onSubmit, onCancel }) => {
       </div>
       <div className="form-actions">
         <button type="submit" className="btn btn-primary">
-          {initialData ? 'Update' : 'Add'}
+          {initialData ? 'Update' : 'Create'}
         </button>
         {onCancel && (
           <button type="button" className="btn btn-secondary" onClick={onCancel}>

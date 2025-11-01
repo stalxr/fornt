@@ -13,6 +13,11 @@ const ArticleForm = ({ initialData, onSubmit, onCancel }) => {
         title: initialData.title || '',
         body: initialData.body || '',
       });
+    } else {
+      setFormData({
+        title: '',
+        body: '',
+      });
     }
   }, [initialData]);
 
@@ -55,7 +60,7 @@ const ArticleForm = ({ initialData, onSubmit, onCancel }) => {
       </div>
       <div className="form-actions">
         <button type="submit" className="btn btn-primary">
-          {initialData ? 'Update' : 'Add'}
+          {initialData ? 'Update' : 'Create'}
         </button>
         {onCancel && (
           <button type="button" className="btn btn-secondary" onClick={onCancel}>

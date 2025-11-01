@@ -13,6 +13,11 @@ const PhotoForm = ({ initialData, onSubmit, onCancel }) => {
         title: initialData.title || '',
         url: initialData.url || '',
       });
+    } else {
+      setFormData({
+        title: '',
+        url: '',
+      });
     }
   }, [initialData]);
 
@@ -55,7 +60,7 @@ const PhotoForm = ({ initialData, onSubmit, onCancel }) => {
       </div>
       <div className="form-actions">
         <button type="submit" className="btn btn-primary">
-          {initialData ? 'Update' : 'Add'}
+          {initialData ? 'Update' : 'Create'}
         </button>
         {onCancel && (
           <button type="button" className="btn btn-secondary" onClick={onCancel}>
